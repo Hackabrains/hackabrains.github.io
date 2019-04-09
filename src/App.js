@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Header from './partials/Header'
 import { createGlobalStyle } from 'styled-components'
 
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 ` 
 
 export default function App () {
+
   return (
     <>
       <GlobalStyle />

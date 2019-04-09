@@ -9,7 +9,6 @@ const HeaderContainer = styled.div`
   width: 100vw;
   position: relative;
   text-align: center;
-  padding-top: 100px;
 `
 const CinzelTitle = styled(Cinzel)`
   font-size: 3em;
@@ -49,6 +48,28 @@ const HeaderBottom = styled.div`
   transition: .1s;
 `
 
+const Nav = styled.nav`
+  a {
+    padding: 30px 30px;
+    display: inline-block;
+    transition: .5s;
+    text-decoration: none;
+    ${Cinzel} {
+      border-bottom: 1px solid rgba(35, 38, 50, .3);
+      transition: .5s;
+    }
+    &:hover ${Cinzel} {
+      border-bottom: 1px solid rgba(35, 38, 50, .3);
+      border-radius: 10px;
+      padding: 0 10px;
+
+    }
+    &:active {
+      opacity: .5;
+    }
+  }
+`
+
 export default class Header extends React.Component {
 
   constructor(props) {
@@ -58,7 +79,11 @@ export default class Header extends React.Component {
   state = {
     mouseXY: {x: 0, y: 0}
   }
-
+  componentDidMount() {
+    window.addEventListener('deviceorientation', ({ alpha, gamma, beta}) => {
+      this.setState({ mouseXY: { x: alpha + beta * 5 , y: gamma + beta * 5  } })
+    })
+  }
   _throttledMouseMove = ({ screenX: x, screenY: y }) => {
     console.log(this.state.mouseXY)
     this.setState({ mouseXY: { x, y } })
@@ -76,6 +101,10 @@ export default class Header extends React.Component {
         <HeaderContainer onMouseMove={this._onMouseMove}>
           <HeaderTop style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.015}px) translateY(${mouseXY.y * 0.07}px)` }} />
           <HeaderBottom style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.010}px) translateY(${mouseXY.y * 0.010}px)` }} />
+          <Nav>
+            <a href="javascript:;"><Cinzel>INSCRIÇÔES</Cinzel></a>
+            <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a>
+          </Nav>
           <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br/>
           <Cinzel>The winter is here</Cinzel>
         </HeaderContainer>
