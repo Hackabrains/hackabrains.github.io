@@ -1,9 +1,21 @@
 import React from 'react'
+import Header from './partials/Header'
+import { createGlobalStyle } from 'styled-components'
 
-export default function App() {
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+` 
+
+export default function App () {
   return (
-    <div>
-      
-    </div>
+    <>
+      <GlobalStyle />
+      <Header />
+    </>
   )
 }
