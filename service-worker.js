@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/game-of-code/precache-manifest.d579c86221a17310515df967eff272fd.js"
+  "/game-of-code/precache-manifest.4499cec40ba621ab994847787bd9ce24.js"
 );
 
 workbox.clientsClaim();
