@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "d94f4cb958d185e76c74",
-    "url": "/game-of-code/static/js/main.264a3b6a.chunk.js"
+    "revision": "a93ba20619bf01e7f9b5",
+    "url": "/game-of-code/static/js/main.e2c291a6.chunk.js"
   },
   {
     "revision": "47eb2dd623942aab44b7",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/game-of-code/static/js/2.23af4b4a.chunk.js"
   },
   {
-    "revision": "5924d7cf4a026a1834b0fe06e50d181b",
+    "revision": "6d735c045d41c2c13c5e8fdafe5c5074",
     "url": "/game-of-code/index.html"
   }
 ];
