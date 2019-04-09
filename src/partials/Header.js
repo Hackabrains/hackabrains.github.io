@@ -3,9 +3,8 @@ import styled from 'styled-components'
 import { throttle, } from 'lodash'
 import { Cinzel } from '../components/Text';
 const HeaderContainer = styled.div`
-  /* background: #faebe8; */
-  height: 100vh;
   overflow: hidden;
+  height: 100vh;
   width: 100vw;
   position: relative;
   text-align: center;
@@ -13,8 +12,12 @@ const HeaderContainer = styled.div`
 const CinzelTitle = styled(Cinzel)`
   font-size: 3em;
   z-index: 99;
+  color: black;
   big {
     font-size: 2em;
+  }
+  @media (max-width: 440px) {    
+    font-size: 1.5em;
   }
 `
 
@@ -30,7 +33,6 @@ const HeaderTop = styled.div`
   z-index: -1;
   transform: scale(1.2);
   transition: .2s;
-
 `
 
 const HeaderBottom = styled.div`
@@ -49,11 +51,17 @@ const HeaderBottom = styled.div`
 `
 
 const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   a {
     padding: 30px 30px;
     display: inline-block;
     transition: .5s;
     text-decoration: none;
+    @media (max-width: 440px) {    
+      font-size: .7em;
+    }
     ${Cinzel} {
       border-bottom: 1px solid rgba(35, 38, 50, .3);
       transition: .5s;
@@ -62,7 +70,6 @@ const Nav = styled.nav`
       border-bottom: 1px solid rgba(35, 38, 50, .3);
       border-radius: 10px;
       padding: 0 10px;
-
     }
     &:active {
       opacity: .5;
@@ -106,7 +113,7 @@ export default class Header extends React.Component {
             <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a>
           </Nav>
           <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br/>
-          <Cinzel>The winter is here</Cinzel>
+          <Cinzel bold letterSpacing={'10px'}>The winter is here</Cinzel>
         </HeaderContainer>
       </>
     )
