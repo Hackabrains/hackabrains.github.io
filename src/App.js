@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import Header from './partials/Header'
 import { createGlobalStyle } from 'styled-components'
+import Sponsors from './partials/Sponsors';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,6 +18,7 @@ export default function App () {
     <>
       <GlobalStyle />
       <Header />
+      <Sponsors />
     </>
   )
 }
