@@ -42,7 +42,7 @@ const HeaderBottom = styled.div`
   background-size: cover;
   background-position: top;
   width: 100vw;
-  height: 90vh;
+  height: 85vh;
   position: absolute;
   top: 0;
   background-repeat: no-repeat;

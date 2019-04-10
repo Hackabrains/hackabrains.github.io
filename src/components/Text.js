@@ -9,7 +9,7 @@ export const Raleway = styled.span`
 
 export const Cinzel = styled.span`
   font-family: 'Cinzel Decorative', serif;
-  font-size: 1.2em;
+  font-size: ${ ({ fontSize }) => fontSize}
   color: rgb(35, 38, 50);
   ${({ bold }) => bold && `
     font-weight: bold;
@@ -18,3 +18,7 @@ export const Cinzel = styled.span`
     letter-spacing: ${letterSpacing};
   `}
 `
+
+Cinzel.defaultProps = {
+  fontSize: '1.2em'
+}
