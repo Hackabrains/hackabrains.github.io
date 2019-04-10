@@ -40,9 +40,9 @@ const HeaderTop = styled.div`
 const HeaderBottom = styled.div`
   background-image: url(imgs/bg-3.png);
   background-size: cover;
-  background-position: center center;
+  background-position: top;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   position: absolute;
   top: 0;
   background-repeat: no-repeat;
