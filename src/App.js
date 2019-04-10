@@ -1,6 +1,12 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Header from './partials/Header'
 import { createGlobalStyle } from 'styled-components'
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/pt-br';
+import Sponsors from './partials/Sponsors';
+dayjs.locale('pt-br');
+dayjs.extend(relativeTime);
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,6 +23,7 @@ export default function App () {
     <>
       <GlobalStyle />
       <Header />
+      <Sponsors />
     </>
   )
 }

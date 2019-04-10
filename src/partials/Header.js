@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { throttle, } from 'lodash'
 import { Cinzel } from '../components/Text';
+
 const HeaderContainer = styled.div`
   overflow: hidden;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   position: relative;
   text-align: center;
@@ -25,11 +26,11 @@ const HeaderTop = styled.div`
   background-image: url(imgs/bg-1.png);
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   position: absolute;
-  top: 0;
+  bottom: 184px;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: bottom;
   z-index: -1;
   transform: scale(1.2);
   transition: .2s;
@@ -102,7 +103,6 @@ export default class Header extends React.Component {
     if(!check) {
       e.persist();
       this._throttledMouseMove(e);
-
     }
   }
   render() {
@@ -113,7 +113,7 @@ export default class Header extends React.Component {
           <HeaderTop style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.015}px) translateY(${mouseXY.y * 0.07}px)` }} />
           <HeaderBottom style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.010}px) translateY(${mouseXY.y * 0.010}px)` }} />
           <Nav>
-            <a href="javascript:;"><Cinzel>INSCRIÇÔES</Cinzel></a>
+            <a href="https://www.sympla.com.br/hackabrains-2019---game-of-codes__499575" target="_blank"><Cinzel>INSCRIÇÔES</Cinzel></a>
             <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a>
           </Nav>
           <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br/>
