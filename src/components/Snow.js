@@ -57,7 +57,7 @@ export const Snow = (canvas, count, options) => {
   const defaultOptions = {
     color: 'orange',
     radius: [0.5, 3.0],
-    speed: [1, 3],
+    speed: [2, 3],
     wind: [-0.5, 3.0]
   }
   
@@ -123,8 +123,6 @@ export const Snow = (canvas, count, options) => {
     }
   }
   
-  const el = document.querySelector('.container')
-  const wrapper = document.querySelector('body')
   const canvas = document.getElementById('snow')
   
   const animFrame = window.requestAnimationFrame ||
