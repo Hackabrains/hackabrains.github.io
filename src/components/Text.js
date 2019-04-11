@@ -2,15 +2,16 @@ import styled from 'styled-components'
 
 export const Raleway = styled.span`
   font-family: 'Raleway', sans-serif;
-  font-size: 1.2em;
-  color: rgb(35, 38, 50);
+  font-size: ${ ({ fontSize }) => fontSize}
+  color: ${ ({ color }) => color}
 `
 
 
 export const Cinzel = styled.span`
   font-family: 'Cinzel Decorative', serif;
   font-size: ${ ({ fontSize }) => fontSize}
-  color: rgb(35, 38, 50);
+  color: ${ ({ color }) => color}
+  padding: 0 35px;
   ${({ bold }) => bold && `
     font-weight: bold;
   `}
@@ -20,5 +21,11 @@ export const Cinzel = styled.span`
 `
 
 Cinzel.defaultProps = {
-  fontSize: '1.2em'
+  fontSize: '1.2em',
+  color: 'rgb(35, 38, 50)'
+}
+
+Raleway.defaultProps = {
+  fontSize: '1.2em',
+  color: 'rgb(35, 38, 50)'
 }

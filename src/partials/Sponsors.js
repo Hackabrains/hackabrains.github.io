@@ -1,14 +1,25 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Cinzel } from '../components/Text';
+import Footer from './Footer';
 
 const SponsorsContainer = styled.div`
     width: 100%;
-    padding-top: .5em;
+    height: 100%;
+    padding-top: 2%;
+    margin-top: -20%;
+    z-index: 0;
+    background-image: url('./imgs/westeros-light.png');
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    z-index: -10;
 `
 
 const SingleContent = styled.div`
   width: 100%;
+  margin-top: 20%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -56,51 +67,74 @@ const SponsorItem = styled.a`
   width: 155px;
   height: auto;
   cursor: pointer;
+  &:hover{ 
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+  }
 `
 
 const SupporterItem = styled.a` 
-  width: 135px;
-  height: auto;
+  width: 145px;
   object-fit: cover;
+  &:hover{ 
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+  }
 `
 
 const SponsorImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  `
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 
+const IronIcon = styled.img`
+width: 10em;
+position: absolute;
 
-const Footer = styled.footer`
-  background: purple;
-  width: 100%;
+top: 130%;
+left: .5%;
+z-index: 10;
+opacity: .1;
 `
 
+const StarkIcon = styled.img`
+  width: 20em;
+  position: absolute;
+  transform: rotateZ(-5deg);
+  top: 170%;
+  right: .5%;
+  z-index: 10;
+  opacity: .1;
+`
 
+const RotatedStarkIcon = styled.img`
+  transform: rotateY(180deg);
+  width: 35px;
+`
 
 export default class Sponsors extends Component {
 
   state = {
     sponsors: [
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
       { logo: './imgs/sponsors/nave.png', url: 'https://nave.rs/' },
       { logo: './imgs/sponsors/cigam.png', url: 'https://www.cigam.com.br/' },
+      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
+      { logo: './imgs/sponsors/prodigious.png', url: 'https://www.prodigious.com/' },
       { logo: './imgs/sponsors/atlas.png', url: 'http://atlastechnol.com/' },
       { logo: './imgs/sponsors/nodo.svg', url: 'https://nodo.cc' },
-      { logo: './imgs/sponsors/bridge.jpeg', url: 'https://www.bridge-mt.com/' },
+      { logo: './imgs/sponsors/bridge.png', url: 'https://www.bridge-mt.com/' },
     ],
 
     supporters: [
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-
+      { logo: './imgs/supporters/brainny.png', url: 'https://brainny.cc' },
+      { logo: './imgs/supporters/senatec.jpeg', url: 'https://web.facebook.com/senatecjr/' },
     ]
   }
 
@@ -109,6 +143,7 @@ export default class Sponsors extends Component {
     return (
       <SponsorsContainer>
         <SingleContent>
+
           <Cinzel fontSize={'1.6em'}> <big>R</big>ealização</Cinzel>
           <RealizationDivider />
           <SenacLogo src={'./imgs/logo-senac.png'} />
@@ -144,7 +179,7 @@ export default class Sponsors extends Component {
             }
           </SponsorItems>
         </SponsorsContent>
-
+        <Footer />
       </SponsorsContainer>
     )
   }

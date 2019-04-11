@@ -8,6 +8,7 @@ export const Snows = styled.canvas`
     width: 100%;
     background-color: transparent;
     left: 0;
+    z-index: 0;
 `
 
 
@@ -37,7 +38,7 @@ export const Snow = (canvas, count, options) => {
     }
   
     const loop = () => {
-      draw()
+      draw()  
       update()
       animFrame(loop)
     }

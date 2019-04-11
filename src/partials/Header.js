@@ -10,6 +10,7 @@ const HeaderContainer = styled.div`
   width: 100vw;
   position: relative;
   text-align: center;
+  z-index: 10;
 `
 const CinzelTitle = styled(Cinzel)`
   font-size: 3em;
@@ -29,7 +30,7 @@ const HeaderTop = styled.div`
   width: 100vw;
   height: 120vh;
   position: absolute;
-  bottom: 184px;
+  bottom: 40px;
   background-repeat: no-repeat;
   background-position: bottom;
   z-index: -1;
@@ -42,7 +43,7 @@ const HeaderBottom = styled.div`
   background-size: cover;
   background-position: top;
   width: 100vw;
-  height: 85vh;
+  height: 90vh;
   position: absolute;
   top: 0;
   background-repeat: no-repeat;
@@ -50,17 +51,20 @@ const HeaderBottom = styled.div`
   transform: scale(1.15);
   transform-origin: center;
   transition: .1s;
+
 `
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
   a {
     padding: 30px 30px;
     display: inline-block;
     transition: .5s;
     text-decoration: none;
+    color: rgb(35, 38, 50);
     @media (max-width: 440px) {    
       font-size: .7em;
     }
@@ -113,13 +117,13 @@ export default class Header extends React.Component {
     return (
       <>
         <HeaderContainer ref="container" onMouseMove={this._onMouseMove}>
-          <Snows ref={c => this.canvas = c} />
           <HeaderTop style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.015}px) translateY(${mouseXY.y * 0.07}px)` }} />
           <HeaderBottom style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.010}px) translateY(${mouseXY.y * 0.010}px)` }} />
           <Nav>
             <a href="https://www.sympla.com.br/hackabrains-2019---game-of-codes__499575" target="_blank"><Cinzel>INSCRIÇÔES</Cinzel></a>
             <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a>
           </Nav>
+          <Snows ref={c => this.canvas = c} />
           <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br />
           <Cinzel bold letterSpacing={'10px'}>The winter is here</Cinzel>
         </HeaderContainer>
