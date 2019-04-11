@@ -51,7 +51,6 @@ const HeaderBottom = styled.div`
   transform: scale(1.15);
   transform-origin: center;
   transition: .1s;
-
 `
 
 const Nav = styled.nav`

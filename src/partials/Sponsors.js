@@ -43,6 +43,10 @@ const SupportersDivider = styled.div`
 const SenacLogo = styled.img`
   width: 15em;
   margin: 3% 0;
+
+  @media (max-width: 900px) {    
+    width: 12em;
+  }
 `
 
 const SponsorsContent = styled.div`
@@ -50,7 +54,7 @@ const SponsorsContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5%;
+  margin-top: 10%;
   `
 
 const SponsorItems = styled.div`
@@ -61,24 +65,61 @@ const SponsorItems = styled.div`
   align-items: center;
   margin-top: 1%;
   flex-wrap: wrap;
+ 
+  @media (max-width: 1200px) {    
+    width: 70%;
+  }
+ 
+  @media (max-width: 900px) {    
+    width: 80%;
+  }
+
+  @media (max-width: 660px) {    
+    width: 90%;
+  }
+
   `
 
 const SponsorItem = styled.a`
-  width: 155px;
+  width: 170px;
   height: auto;
   cursor: pointer;
+  
   &:hover{ 
     transform: scale(1.1);
     transition: all .3s ease-in-out;
+  }
+  
+  @media (max-width: 900px) {    
+    width: 130px;
+  }
+
+  @media (max-width: 450px) {    
+    width: 140px;
+    margin-top: 5%;
+  }
+
+  @media (max-width: 330px) {    
+    width: 115px;
+    margin-top: 5%;
   }
 `
 
 const SupporterItem = styled.a` 
   width: 145px;
   object-fit: cover;
+  
   &:hover{ 
     transform: scale(1.1);
     transition: all .3s ease-in-out;
+  }
+
+  @media (max-width: 900px) {    
+    width: 125px;
+  }
+  
+  @media (max-width: 900px) {    
+    width: 100px;
   }
 `
 
@@ -134,7 +175,7 @@ export default class Sponsors extends Component {
 
     supporters: [
       { logo: './imgs/supporters/brainny.png', url: 'https://brainny.cc' },
-      { logo: './imgs/supporters/senatec.jpeg', url: 'https://web.facebook.com/senatecjr/' },
+      { logo: './imgs/supporters/senatec.png', url: 'https://web.facebook.com/senatecjr/' },
     ]
   }
 
@@ -142,6 +183,7 @@ export default class Sponsors extends Component {
     const { sponsors, supporters } = this.state
     return (
       <SponsorsContainer>
+
         <SingleContent>
 
           <Cinzel fontSize={'1.6em'}> <big>R</big>ealização</Cinzel>
