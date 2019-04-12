@@ -11,16 +11,24 @@ const HeaderContainer = styled.div`
   position: relative;
   text-align: center;
   z-index: 10;
-`
+  `
 const CinzelTitle = styled(Cinzel)`
   font-size: 3em;
   z-index: 99;
   color: black;
+  display: block;
+  margin-top: 10%;
+  
   big {
     font-size: 2em;
   }
+
   @media (max-width: 440px) {    
     font-size: 1.5em;
+  }
+
+  @media (max-width: 430px) {    
+    margin-top: 35%;
   }
 `
 
@@ -36,6 +44,15 @@ const HeaderTop = styled.div`
   z-index: -1;
   transform: scale(1.2);
   transition: .2s;
+
+  @media (max-width: 1600px) {    
+    bottom: 130px;
+  }
+
+  @media (max-width: 720px) {    
+    bottom: 70px;
+  }
+
 `
 
 const HeaderBottom = styled.div`

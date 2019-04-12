@@ -59,6 +59,7 @@ const SponsorsContent = styled.div`
 
 const SponsorItems = styled.div`
   width: 50%;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
