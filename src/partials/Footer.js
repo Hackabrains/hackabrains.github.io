@@ -22,6 +22,7 @@ const Row = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 3%;
+    overflow: hidden;
    
     @media (max-width: 600px) {    
         justify-content: center;
