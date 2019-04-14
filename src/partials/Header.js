@@ -75,6 +75,11 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: center;
   z-index: 99;
+
+  &.active{
+    display: flex;
+  }
+
   a {
     padding: 30px 30px;
     display: inline-block;
@@ -97,6 +102,86 @@ const Nav = styled.nav`
       opacity: .5;
     }
   }
+
+  @media (max-width: 720px) {   
+    display: none; 
+    background: rgba(0,0,0, .9);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 9999;
+    flex-direction: column;
+
+    a {
+      color: #cdcdcd;
+      font-size: 1.3em;
+    }
+  }
+`
+
+const ScrollSword = styled.img`
+  position: absolute;
+  z-index: 9998;
+  width: 30px;
+  bottom: 19%;
+  left: 50%;
+  cursor: pointer;
+  animation: jump 1.8s infinite
+  @keyframes jump { 
+    0% 
+    { bottom: 17.5%; } 50% 
+    { bottom: 22.5%; } 100% 
+    { bottom: 17.5%; } 
+  }
+`
+
+const Hamburguer = styled.div`
+position:absolute;
+outline:none;
+top: 1%;
+right:0;
+border:0;
+margin: 1.5em;
+z-index:9999;
+display: none;
+&:hover {
+  cursor:pointer;
+}
+
+@media (max-width: 720px) {   
+  display: block;
+}
+`
+
+const Bar = styled.div`
+  width: 34px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #000;
+  margin: 3px 0;
+  transition-duration: 0.4s;
+  z-index: 9999;
+`
+
+const Bar1 = styled(Bar)`
+  &.toggle{
+    transform: rotate(-45deg) translate(-2px, 1px);
+    background:white;
+    margin-top: .6em;
+  }
+`
+const Bar2 = styled(Bar)`
+  &.toggle{
+    opacity: 0;
+  }
+`
+const Bar3 = styled(Bar)`
+  &.toggle{
+
+    transform: rotate(45deg) translate(-10px, -7px);
+    -webkit-transform: rotate(45deg) translate(-10px, -8px);
+    background:white;
+  }
 `
 
 export default class Header extends React.Component {
@@ -105,8 +190,10 @@ export default class Header extends React.Component {
     super(props);
     this._throttledMouseMove = throttle(this._throttledMouseMove.bind(this), 50);
   }
+
   state = {
-    mouseXY: { x: 0, y: 0 }
+    mouseXY: { x: 0, y: 0 },
+    isActive: false
   }
   componentDidMount() {
     window.addEventListener('deviceorientation', ({ alpha, gamma, beta }) => {
@@ -128,16 +215,45 @@ export default class Header extends React.Component {
       this._throttledMouseMove(e);
     }
   }
+
+  toggleHamburguer = () => {
+    const { active } = this.state
+    const { bar1, bar2, bar3, nav } = this.refs
+
+    this.setState({ active: !active })
+
+    if (active) {
+      nav.classList.add('active')
+      bar1.classList.add('toggle')
+      bar2.classList.add('toggle')
+      bar3.classList.add('toggle')
+    }else{
+      nav.classList.remove('active')
+      bar1.classList.remove('toggle')
+      bar2.classList.remove('toggle')
+      bar3.classList.remove('toggle')
+    }
+  }
+
   render() {
     const { mouseXY } = this.state
     return (
       <>
+
+        <Hamburguer onClick={this.toggleHamburguer}>
+          <Bar1 ref="bar1" />
+          <Bar2 ref="bar2" />
+          <Bar3 ref="bar3" />
+        </Hamburguer>
+
         <HeaderContainer ref="container" onMouseMove={this._onMouseMove}>
+          {/* <ScrollSword src={'./imgs/sword.png'} /> */}
           <HeaderTop style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.015}px) translateY(${mouseXY.y * 0.07}px)` }} />
           <HeaderBottom style={{ transform: `scale(1.15) translateX(${mouseXY.x * 0.010}px) translateY(${mouseXY.y * 0.010}px)` }} />
-          <Nav>
+          <Nav ref="nav">
             <a href="https://www.sympla.com.br/hackabrains-2019---game-of-codes__499575" target="_blank"><Cinzel>INSCRIÇÔES</Cinzel></a>
-            <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a>
+            <a href="./regulamento.pdf" target="_blank"><Cinzel>Regulamento</Cinzel></a>
+            {/* <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a> */}
           </Nav>
           <Snows ref={c => this.canvas = c} />
           <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br />

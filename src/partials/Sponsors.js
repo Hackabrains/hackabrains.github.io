@@ -11,11 +11,15 @@ const SponsorsContainer = styled.div`
     z-index: 0;
     background-image: url('./imgs/westeros-light.png');
     background-repeat: no-repeat;
-    // background-attachment: fixed;
     background-size: cover;
     background-position: center top;
     z-index: -10;
+    
+    @media (max-width: 450px) {    
+      margin-top: -45%;  
+    }
 `
+
 
 const SingleContent = styled.div`
   width: 100%;
@@ -24,6 +28,10 @@ const SingleContent = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 450px) {    
+    margin-top: 45%;  
+  }
 `
 
 const RealizationDivider = styled.div`
@@ -111,7 +119,7 @@ const SupporterItem = styled.a`
   object-fit: cover;
   
   &:hover{ 
-    transform: scale(1.1);
+    transform: scale(1.1);  
     transition: all .3s ease-in-out;
   }
 
@@ -172,16 +180,18 @@ export default class Sponsors extends Component {
       { logo: './imgs/sponsors/atlas.png', url: 'http://atlastechnol.com/' },
       { logo: './imgs/sponsors/nodo.svg', url: 'https://nodo.cc' },
       { logo: './imgs/sponsors/bridge.png', url: 'https://www.bridge-mt.com/' },
+      { logo: './imgs/supporters/brainny.png', url: 'https://brainny.cc' },
     ],
 
     supporters: [
-      { logo: './imgs/supporters/brainny.png', url: 'https://brainny.cc' },
       { logo: './imgs/supporters/senatec.png', url: 'https://web.facebook.com/senatecjr/' },
     ]
   }
 
   render() {
     const { sponsors, supporters } = this.state
+    console.log(this.props);
+    
     return (
       <SponsorsContainer>
 
