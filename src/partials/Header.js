@@ -177,10 +177,25 @@ const Bar2 = styled(Bar)`
 `
 const Bar3 = styled(Bar)`
   &.toggle{
-
     transform: rotate(45deg) translate(-10px, -7px);
     -webkit-transform: rotate(45deg) translate(-10px, -8px);
     background:white;
+  }
+`
+
+const Logo = styled.img`
+  width: 30em;
+  margin-top: 10%;
+  opacity: .7;
+
+  @media (max-width: 440px) {    
+    margin-top: 50%;
+    width: 20em;
+  }
+
+  @media (max-width: 340px) {    
+    margin-top: 50%;
+    width: 18em;
   }
 `
 
@@ -256,7 +271,8 @@ export default class Header extends React.Component {
             {/* <a href="javascript:;"><Cinzel>PATROCINADORES</Cinzel></a> */}
           </Nav>
           <Snows ref={c => this.canvas = c} />
-          <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br />
+          {/* <CinzelTitle><big>G</big>ame of <big>C</big>odes</CinzelTitle><br /> */}
+          <Logo src="./imgs/logo_game-of-codes.png" /><br /><br />
           <Cinzel bold letterSpacing={'10px'}>The winter is here</Cinzel>
         </HeaderContainer>
       </>
