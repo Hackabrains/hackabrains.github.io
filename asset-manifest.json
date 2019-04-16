@@ -1,11 +1,11 @@
 {
-  "main.js": "/static/js/main.03dcb319.chunk.js",
-  "main.js.map": "/static/js/main.03dcb319.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.c5541365.js",
-  "runtime~main.js.map": "/static/js/runtime~main.c5541365.js.map",
-  "static/js/2.0c03ba98.chunk.js": "/static/js/2.0c03ba98.chunk.js",
-  "static/js/2.0c03ba98.chunk.js.map": "/static/js/2.0c03ba98.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.06783d838eae62d5faf287424f10af99.js": "/precache-manifest.06783d838eae62d5faf287424f10af99.js",
-  "service-worker.js": "/service-worker.js"
+  "main.js": "/game-of-code/static/js/main.8d17e719.chunk.js",
+  "main.js.map": "/game-of-code/static/js/main.8d17e719.chunk.js.map",
+  "runtime~main.js": "/game-of-code/static/js/runtime~main.439b1baa.js",
+  "runtime~main.js.map": "/game-of-code/static/js/runtime~main.439b1baa.js.map",
+  "static/js/2.d2572f9d.chunk.js": "/game-of-code/static/js/2.d2572f9d.chunk.js",
+  "static/js/2.d2572f9d.chunk.js.map": "/game-of-code/static/js/2.d2572f9d.chunk.js.map",
+  "index.html": "/game-of-code/index.html",
+  "precache-manifest.87e7f0c3301c6868b2dc96acebf4ed61.js": "/game-of-code/precache-manifest.87e7f0c3301c6868b2dc96acebf4ed61.js",
+  "service-worker.js": "/game-of-code/service-worker.js"
 }
