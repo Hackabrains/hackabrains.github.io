@@ -2,7 +2,7 @@
   "name": "game-of-code",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hackabrains.github.io/game-of-code",
+  "homepage": "https://hackabrains.github.io/",
   "dependencies": {
     "dayjs": "^1.8.12",
     "lodash": "^4.17.11",
