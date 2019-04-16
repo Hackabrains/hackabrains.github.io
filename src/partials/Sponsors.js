@@ -66,7 +66,6 @@ const SponsorsContent = styled.div`
   `
 
 const SponsorItems = styled.div`
-  width: 50%;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -74,42 +73,42 @@ const SponsorItems = styled.div`
   align-items: center;
   margin-top: 1%;
   flex-wrap: wrap;
- 
+  padding: 0 20vw;
   @media (max-width: 1200px) {    
-    width: 70%;
+
   }
  
   @media (max-width: 900px) {    
-    width: 80%;
+
   }
 
   @media (max-width: 660px) {    
-    width: 90%;
+
   }
 
   `
 
 const SponsorItem = styled.a`
-  width: 170px;
+  width: 220px;
   height: auto;
   cursor: pointer;
-  
+  transition: all .3s ease-in-out;
+  padding: 15px;
   &:hover{ 
     transform: scale(1.1);
-    transition: all .3s ease-in-out;
   }
   
   @media (max-width: 900px) {    
-    width: 130px;
+    width: 180px;
   }
 
   @media (max-width: 450px) {    
-    width: 140px;
+    width: 170px;
     margin-top: 5%;
   }
 
   @media (max-width: 330px) {    
-    width: 115px;
+    width: 140px;
     margin-top: 5%;
   }
 `
@@ -117,10 +116,10 @@ const SponsorItem = styled.a`
 const SupporterItem = styled.a` 
   width: 145px;
   object-fit: cover;
+  transition: all .3s ease-in-out;
   
   &:hover{ 
     transform: scale(1.1);  
-    transition: all .3s ease-in-out;
   }
 
   @media (max-width: 900px) {    
@@ -136,37 +135,6 @@ const SponsorImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  `
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`
-
-const IronIcon = styled.img`
-width: 10em;
-position: absolute;
-
-top: 130%;
-left: .5%;
-z-index: 10;
-opacity: .1;
-`
-
-const StarkIcon = styled.img`
-  width: 20em;
-  position: absolute;
-  transform: rotateZ(-5deg);
-  top: 170%;
-  right: .5%;
-  z-index: 10;
-  opacity: .1;
-`
-
-const RotatedStarkIcon = styled.img`
-  transform: rotateY(180deg);
-  width: 35px;
 `
 
 export default class Sponsors extends Component {
@@ -181,6 +149,7 @@ export default class Sponsors extends Component {
       { logo: './imgs/sponsors/nodo.svg', url: 'https://nodo.cc' },
       { logo: './imgs/sponsors/bridge.png', url: 'https://www.bridge-mt.com/' },
       { logo: './imgs/supporters/brainny.png', url: 'https://brainny.cc' },
+      { logo: './imgs/sponsors/bemobile.png', url: 'https://bemobile.tech' },
     ],
 
     supporters: [
