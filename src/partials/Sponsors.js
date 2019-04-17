@@ -22,6 +22,7 @@ export default class Sponsors extends Component {
     supporters: [
       { logo: './imgs/supporters/senatec.png', url: 'https://web.facebook.com/senatecjr/' },
       { logo: './imgs/supporters/evoke.png', url: 'http://www.evokeenergy.com.br/' },
+      { logo: './imgs/supporters/orquidea.png', url: 'http://www.orquidea.com.br/produtos/biscoitos' },
     ]
   }
 
