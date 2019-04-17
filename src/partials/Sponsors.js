@@ -3,33 +3,22 @@ import styled from 'styled-components'
 import { Cinzel } from '../components/Text';
 import Footer from './Footer';
 
-
 export default class Sponsors extends Component {
 
   state = {
-    sponsors: [
-      { logo: './imgs/sponsors/nave.png', url: 'https://nave.rs/' },
-      { logo: './imgs/sponsors/cigam.png', url: 'https://www.cigam.com.br/' },
-      { logo: './imgs/sponsors/cwi.png', url: 'https://cwi.com.br/' },
-      { logo: './imgs/sponsors/prodigious.png', url: 'https://www.prodigious.com/' },
-      { logo: './imgs/sponsors/atlas.png', url: 'http://atlastechnol.com/' },
-      { logo: './imgs/sponsors/nodo.svg', url: 'https://nodo.cc' },
-      { logo: './imgs/sponsors/bridge.png', url: 'https://www.bridge-mt.com/' },
-      { logo: './imgs/supporters/brainny.png', url: 'https://brainny.cc' },
-      { logo: './imgs/sponsors/bemobile.png', url: 'https://bemobile.tech' },
-    ],
-
-    supporters: [
-      { logo: './imgs/supporters/senatec.png', url: 'https://web.facebook.com/senatecjr/' },
-      { logo: './imgs/supporters/evoke.png', url: 'http://www.evokeenergy.com.br/' },
-      { logo: './imgs/supporters/orquidea.png', url: 'http://www.orquidea.com.br/produtos/biscoitos' },
-    ]
+    sponsors: [],
+    supporters: [],
   }
-
+  async componentDidMount() {
+    const data = await (await fetch('https://game-of-code-84cb3.firebaseio.com/.json')).json()
+    
+    this.setState({ 
+      sponsors: Object.values(data.sponsors),
+      supporters: Object.values(data.supporters),
+    })  
+  }
   render() {
     const { sponsors, supporters } = this.state
-    console.log(this.props);
-    
     return (
       <SponsorsContainer>
 

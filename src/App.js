@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/pt-br';
 import Sponsors from './partials/Sponsors';
-import Footer from './partials/Footer'
+
 dayjs.locale('pt-br');
 dayjs.extend(relativeTime);
 
@@ -25,7 +25,6 @@ export default function App () {
       <GlobalStyle />
       <Header />
       <Sponsors />
-      {/* <Footer /> */}
     </>
   )
 }

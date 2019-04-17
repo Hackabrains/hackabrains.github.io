@@ -14,7 +14,6 @@ export const Raleway = styled.span`
   }
 `
 
-
 export const Cinzel = styled.span`
   font-family: 'Cinzel Decorative', serif;
   font-size: ${ ({ fontSize }) => fontSize}

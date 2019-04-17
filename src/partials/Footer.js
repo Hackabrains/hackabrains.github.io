@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Raleway } from '../components/Text';
 
-
 const Container = styled.footer`
   width: 100%;
   height: 12em;

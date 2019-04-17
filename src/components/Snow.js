@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
@@ -123,8 +122,6 @@ export const Snow = (canvas, count, options) => {
       draw
     }
   }
-  
-  const canvas = document.getElementById('snow')
   
   const animFrame = window.requestAnimationFrame ||
                     window.mozRequestAnimationFrame ||
