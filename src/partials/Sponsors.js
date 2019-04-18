@@ -13,8 +13,8 @@ export default class Sponsors extends Component {
     const data = await (await fetch('https://game-of-code-84cb3.firebaseio.com/.json')).json()
     
     this.setState({ 
-      sponsors: Object.values(data.sponsors),
-      supporters: Object.values(data.supporters),
+      sponsors: Object.values(data.sponsors).sort(() => Math.random() - 0.5),
+      supporters: Object.values(data.supporters).sort(() => Math.random() - 0.5),
     })  
   }
   render() {
